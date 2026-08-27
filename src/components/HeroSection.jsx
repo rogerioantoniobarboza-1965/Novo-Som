@@ -7,6 +7,7 @@
 
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
+import { LightOverlay } from './LightOverlay';
 
 export function HeroSection({ onScrollToPlaylist }) {
   const videoRef = useRef(null);
@@ -60,6 +61,21 @@ export function HeroSection({ onScrollToPlaylist }) {
         >
           Ver Playlist ↓
         </motion.button>
+
+        {/* Assinatura + dica — canto inferior esquerdo */}
+        <motion.div
+          className="hero-signature"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+        >
+          <span className="hero-signature__made">
+            Feito pra mim, com <span className="hero-signature__cc">Claude Code</span>.
+          </span>
+          <span className="hero-signature__hint">
+            Toda música abre o player aqui mesmo ao clicar.
+          </span>
+        </motion.div>
       </motion.div>
 
       {/* ── Lado direito: vídeo em loop ── */}
@@ -81,6 +97,9 @@ export function HeroSection({ onScrollToPlaylist }) {
         />
         {/* Vinheta que integra o vídeo ao fundo */}
         <div className="hero-video-vignette" aria-hidden="true" />
+
+        {/* Luz quente e difusa, vinda do canto superior direito */}
+        <LightOverlay intensity={0.56} />
       </motion.div>
 
     </section>

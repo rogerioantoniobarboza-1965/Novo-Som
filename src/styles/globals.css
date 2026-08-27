@@ -222,6 +222,7 @@ a { color: var(--gold); }
 
 /* Lado esquerdo — texto */
 .hero-text {
+  position: relative;
   padding: calc(var(--header-h) + 3.5rem) 3rem 4rem 3.5rem;
   display: flex;
   flex-direction: column;
@@ -229,6 +230,21 @@ a { color: var(--gold); }
   border-right: 1px solid var(--border-gold);
   background: var(--bg-void);
 }
+
+/* ── Assinatura + dica — canto inferior esquerdo ── */
+.hero-signature {
+  position: absolute;
+  left: 3.5rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+.hero-signature__made { color: var(--text-secondary); letter-spacing: 0.02em; }
+.hero-signature__cc { color: var(--gold); }
+.hero-signature__hint { color: var(--text-muted); }
 
 .hero-eyebrow {
   font-size: 0.68rem;
@@ -798,6 +814,12 @@ a { color: var(--gold); }
     border-bottom: 1px solid var(--border-gold);
   }
   .hero-video-side { height: 280px; }
+  .hero-signature {
+    position: static;
+    left: auto;
+    bottom: auto;
+    margin-top: 2rem;
+  }
   .header { padding: 0 1.25rem; }
   .content-area { padding: 2rem 1rem 4rem; }
 }
